@@ -1,0 +1,27 @@
+<apex:page controller="pract25">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page
+  <!-- End Default Content REMOVE THIS -->
+  <apex:form >
+ 
+  <apex:pageBlock >
+  <apex:pageBlockSection title="Enter new Account" columns="1">
+      <Apex:inputField value="{!acct.name}"/>
+      <apex:inputField value="{!acct.phone}"/>
+      <apex:inputField value="{!acct.fax}"/>
+  
+  </apex:pageBlockSection>
+  
+  <apex:pageBlockSection title="Enter the related contact">
+      Lastname :<apex:inputField value="{!cont.lastname}"/>
+      Email :<apex:inputField value="{!cont.email}"/>
+      Mobile :<apex:inputField value="{!cont.mobilephone}"/>
+  
+  </apex:pageBlockSection>
+  <apex:pageBlockButtons >
+      <apex:commandButton action="{!save}" value="Save"/>
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

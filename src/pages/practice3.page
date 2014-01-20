@@ -1,0 +1,13 @@
+<apex:page standardController="account">
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: practice3
+  <apex:pageBlock title="Hello {!$User.FirstName}!">
+  You are viewing the {!account.name} account<p/>
+  Change account name:<p/>
+  <apex:inputField value="{!account.name}"/><p/>
+  <apex:commandButton action="{!save}" value="Save new Account name"/></apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+  </apex:form>
+</apex:page>

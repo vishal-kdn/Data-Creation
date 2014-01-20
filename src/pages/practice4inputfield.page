@@ -1,0 +1,12 @@
+<apex:page standardController="Contact" renderAs="Pdf"> 
+<apex:form >
+ <apex:pageBlock title="Quick Edit: {!Contact.Name}"> 
+ <apex:pageBlockSection title="Contact Details" columns="1"> 
+ <apex:inputfield value="{!contact.name}"/>
+ <apex:outputfield value="{!Contact.Phone}"/> <apex:outputField value="{!Contact.MobilePhone}" label="Mobile#"/>
+ <apex:outputfield value="{!Contact.Email}" label="{!Contact.FirstName + '’s Email'}"/> 
+<apex:detail subject="{!contact}"/>
+ </apex:pageBlockSection> <apex:pageBlockButtons > 
+ <apex:commandButton action="{!save}" value="Save"/> 
+ </apex:pageBlockButtons>
+  </apex:pageBlock> </apex:form> </apex:page>

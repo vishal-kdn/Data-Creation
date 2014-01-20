@@ -1,0 +1,13 @@
+<apex:page standardController="Account">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: hellouser
+  
+  
+  <b>Hello {!$User.FirstName}..</b>
+<p>You are viewing the <u>{!account.name}</u> account.</p>
+
+<apex:pageBlock title="Hello {!$User.FirstName}!">You are viewing the {!account.name} account</apex:pageBlock>
+  <apex:detail subject="{!account.ownerid}" relatedList="true"/>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,48 @@
+<apex:page controller="vgExercise" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form >
+     <apex:pageBlock title="Welcome, Please choose the account...">
+     <apex:pageBlockSection >
+         <apex:selectList id="acct_select" label="Select Account" value="{!accts}" size="1">
+             
+              <apex:selectOptions value="{!listAcct}">
+             </apex:selectOptions>
+             <apex:actionSupport event="onchange" action="{!call}"  rerender="com"/>
+         </apex:selectList>
+     </apex:pageBlockSection>
+     
+     </apex:pageBlock>
+ 
+ 
+    <apex:outputPanel id="com" >
+        <apex:pageBlock title="Viewing Contacts" rendered="{!contb}">
+          <apex:pageBlockTable value="{!cont}" var="contact" rows="1">
+              <apex:column value="{!contact.lastName}"/>
+              <apex:column value="{!contact.mailingCity}"/>
+              <apex:column value="{!contact.phone}"/>
+          </apex:pageBlockTable>
+          <apex:panelGrid columns="2"> 
+ <apex:commandLink action="{!previous}"> Previous </apex:commandlink> 
+ <apex:commandLink action="{!next}"> Next </apex:commandlink> 
+ </apex:panelGrid> 
+          </apex:pageBlock>
+      
+          
+          <apex:pageBlock title="Viewing Opportunities" rendered="{!contb}">
+           <apex:pageBlockTable value="{!opp}" var="opps" rows="1">
+               <apex:column value="{!opps.name}"/>
+               <apex:column value="{!opps.CloseDate}"/>
+               <apex:column value="{!opps.StageName}"/>
+           </apex:pageBlockTable>
+            <apex:panelGrid columns="2"> 
+ <apex:commandLink action="{!previous}"> Previous </apex:commandlink> 
+ <apex:commandLink action="{!next}"> Next </apex:commandlink> 
+ </apex:panelGrid> 
+            </apex:pageblock>
+ </apex:outputPanel>
+           
+        
+ 
+ </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

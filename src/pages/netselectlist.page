@@ -1,0 +1,52 @@
+<apex:page controller="PickListsController">
+<h1>Picklists Page</h1>
+<apex:form >
+  <apex:pageBlock >
+    <apex:pageBlockSection >
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Option 1"/>
+        <apex:selectList value="{!selected1}">
+          <apex:selectOptions value="{!list1SelectOptions}"/>
+          <apex:actionSupport event="onchange" rerender="chosen_info1, list2"/>
+        </apex:selectList>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection id="chosen_info1">
+      <apex:pageBlockSectionItem >
+         <apex:outputLabel value="Chosen"/>
+         <apex:outputLabel value="{!selected1}"/>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection id="list2">
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Option 2"/>
+        <apex:selectList value="{!selected2}">
+          <apex:selectOptions value="{!list2SelectOptions}"/>
+          <apex:actionSupport event="onchange" rerender="chosen_info2, list3"/>
+        </apex:selectList>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection id="chosen_info2">
+      <apex:pageBlockSectionItem >
+         <apex:outputLabel value="Chosen"/>
+         <apex:outputLabel value="{!selected2}"/>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection id="list3">
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Option 3"/>
+        <apex:selectList value="{!selected3}">
+          <apex:selectOptions value="{!list3SelectOptions}"/>
+          <apex:actionSupport event="onchange" rerender="chosen_info3"/>
+        </apex:selectList>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection id="chosen_info3">
+      <apex:pageBlockSectionItem >
+         <apex:outputLabel value="Chosen"/>
+         <apex:outputLabel value="{!selected3}"/>
+      </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:form>
+</apex:page>

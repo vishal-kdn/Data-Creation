@@ -1,0 +1,21 @@
+<apex:page standardController="contact" extensions="question" renderAs="pdf">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:pageBlock >
+  <apex:pageBlockSection >
+  <apex:detail subject="{!contact.id}" relatedList="false" title="true"/>
+  </apex:pageBlockSection>
+  <apex:pageBlockTable value="{!give}" var="opp" >
+  <apex:column value="{!opp.name}"/>
+  
+  <apex:column value="{!opp.amount}"/>
+  <apex:column value="{!opp.closeDate}"/>
+  <apex:column value="{!opp.probability}"/>
+  <apex:column value="{!opp.type}"/>
+  
+  
+  </apex:pageBlockTable>
+  
+  
+  </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

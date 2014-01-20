@@ -1,0 +1,49 @@
+<!-- Page: -->
+                        
+<apex:page controller="exampleCon1">
+    <apex:form >
+        <!-- Define the JavaScript function sayHello-->
+        <apex:actionFunction name="sayHello" action="{!sayHello}" rerender="out" status="myStatus"/>
+    </apex:form>
+
+    <apex:outputPanel id="out">
+    <apex:outputText value="Hello "/>
+    <apex:actionStatus startText="requesting..." id="myStatus">
+        <apex:facet name="stop">{!username}</apex:facet>
+    </apex:actionStatus>
+    </apex:outputPanel>
+            
+    <!-- Call the sayHello JavaScript function using a script element-->
+    <script>window.setTimeout(sayHello,2000)
+    function fun(ad)
+    {
+    var r=confirm('Are you sure');
+    if (r==true)
+      {
+      methodOneInJavascript(ad);
+      alert('yes sent');
+      }
+    else
+      {
+      return false;
+      }
+      return false;
+    }
+     
+    </script>
+     <apex:outputPanel id="showstate1" rendered="true">
+    <p><apex:outputText value="Clicked? {!state}" id="showstate" /></p> 
+    </apex:outputPanel>               
+    <!-- Add the onclick event listener to a panel. When clicked, the panel triggers
+    the methodOneInJavascript actionFunction with a param -->
+    <apex:outputLink onclick="fun(sad);return false;" styleClass="btn"> 
+        Click Me 
+        
+    </apex:outputLink>
+    <apex:form >
+
+    <apex:actionFunction action="{!methodOne}" name="methodOneInJavascript"  rerender="showstate">
+        <apex:param name="firstParam" assignTo="{!s}" value="" />
+    </apex:actionFunction>
+    </apex:form>
+</apex:page>

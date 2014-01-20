@@ -1,0 +1,10 @@
+<apex:page standardController="opportunity">
+<apex:form >
+    
+     <c:recordDisplay record="opportunity" />
+    
+     
+        
+     
+</apex:form>
+</apex:page>

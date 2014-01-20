@@ -1,0 +1,15 @@
+<apex:page standardController="Merchandise__c">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: merchandiseinfo
+  
+  <apex:pageBlock id="pageBlockColumn2ForDetail">
+            
+                        <apex:pageBlockSection columns="1">
+                            
+                            <apex:outputField value="{!Merchandise__c.Price__c}"  >  </apex:outputField>
+                           
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
