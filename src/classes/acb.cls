@@ -1,3 +1,5 @@
 public with sharing class acb {
-
+	public static voide ac(){
+		System.debug('--Sample--');
+}
 }
